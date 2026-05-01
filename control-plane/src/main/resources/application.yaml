@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: control-plane
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: "0000"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+#      ddl-auto: update
+      ddl-auto: create-drop
+    show-sql: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.nebulaide: DEBUG
