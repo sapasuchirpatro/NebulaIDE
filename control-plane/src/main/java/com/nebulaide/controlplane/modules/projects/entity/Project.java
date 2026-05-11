@@ -26,7 +26,7 @@ import java.util.UUID;
 @EntityListeners(AuditingEntityListener.class)
 public class Project {
 
-    // TODO: We can use time base UUID to eleminate the chance of duplicacy and it help in indexing as well.
+    // TODO: We can use time base UUID to eliminate the chance of duplicate ID and it help in indexing as well.
     @Id
     @GeneratedValue
     private UUID id;

@@ -52,6 +52,18 @@ public class GlobalExceptionHandler {
 //        return null;
 //    }
 
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ApiError> handleResourceNotFoundException(ResourceNotFoundException ex) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(
+                        ApiError.builder()
+                                .code("RESOURCE_NOT_FOUND")
+                                .message(ex.getMessage())
+                                .build()
+                );
+    }
+
     @ExceptionHandler(DuplicateResourceException.class)
     public ResponseEntity<ApiError> handleDuplicateResourceException(DuplicateResourceException ex) {
         return ResponseEntity
